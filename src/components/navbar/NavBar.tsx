@@ -9,12 +9,22 @@ function Navbar() {
             alt="Logo"
           />
           <div className="flex gap-8">
-            <p className="font-sans text-base text-[#ea337b]">HOME</p>
-            <p className="font-montserrat text-base">SOBRE</p>
-            <p className="font-montserrat text-base">POSTAGENS</p>
-            <p className="font-montserrat text-base">CATEGORIAS</p>
-            <p className="font-montserrat text-base">PERFIL</p>
-            <p className="font-montserrat text-base">SAIR</p>
+            <p className="font-sans text-base hover:text-[#ea337b]">HOME</p>
+            <p className="font-montserrat text-base hover:text-[#ea337b]">
+              SOBRE
+            </p>
+            <p className="font-montserrat text-base hover:text-[#ea337b]">
+              POSTAGENS
+            </p>
+            <p className="font-montserrat text-base hover:text-[#ea337b]">
+              CATEGORIAS
+            </p>
+            <p className="font-montserrat text-base hover:text-[#ea337b]">
+              PERFIL
+            </p>
+            <p className="font-montserrat text-base hover:text-[#ea337b]">
+              SAIR
+            </p>
           </div>
         </div>
       </div>
