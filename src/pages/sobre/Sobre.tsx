@@ -1,25 +1,24 @@
-import Arkimedes from "../public/imges/Arkimedes.jpg";
-import Francisco from "../public/imges/Francisco.jpeg";
-import Rebeka from "../public/imges/Rebeka.jpeg";
-import lucas from "../public/imges/lucas.jpeg";
-import Yasmim from "../public/imges/Yasmim.jpeg";
+import Arkimedes from "/imges/Arkimedes.jpg";
+import Francisco from "/imges/Francisco.jpeg";
+import Rebeka from "/imges/Rebeka.jpeg";
+import lucas from "/imges/lucas.jpeg";
+import Yasmim from "/imges/Yasmim.jpeg";
 
 export default function Sobre() {
-  // Simulação de dados
   const cargos = [
-    { id: 1, nome: "Desenvolvedor", img: Arkimedes },
-    { id: 2, nome: "Desenvolvedor", img: Francisco },
+    { id: 1, nome: "Master", img: Arkimedes },
+    { id: 2, nome: "PO - Product Owner", img: Francisco },
     {
       id: 3,
-      nome: "Master",
+      nome: "Tester",
       img: Rebeka,
     },
     {
       id: 4,
-      nome: "PO - Product Owner",
+      nome: "Desenvolvedor",
       img: lucas,
     },
-    { id: 5, nome: "Tester", img: Yasmim },
+    { id: 5, nome: "Desenvolvedor", img: Yasmim },
   ];
 
   return (
