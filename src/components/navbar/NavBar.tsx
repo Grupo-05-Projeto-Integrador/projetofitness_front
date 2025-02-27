@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Navbar() {
   return (
     <>
@@ -8,22 +10,31 @@ function Navbar() {
             className="max-h-24 w-auto pt-1"
             alt="Logo"
           />
+
           <div className="flex gap-8">
-            <p className="font-sans text-base hover:text-[#ea337b]">HOME</p>
+            <Link to="/home">
+              <p className="font-sans text-base hover:text-[#ea337b]">HOME</p>
+            </Link>
             <p className="font-montserrat text-base hover:text-[#ea337b]">
               SOBRE
             </p>
-            <p className="font-montserrat text-base hover:text-[#ea337b]">
-              POSTAGENS
-            </p>
-            <p className="font-montserrat text-base hover:text-[#ea337b]">
-              CATEGORIAS
-            </p>
+            <Link to="/postagens">
+              <p className="font-montserrat text-base hover:text-[#ea337b]">
+                POSTAGENS
+              </p>
+            </Link>
+            <Link to="/categoria">
+              <p className="font-montserrat text-base hover:text-[#ea337b]">
+                CATEGORIAS
+              </p>
+            </Link>
+            <Link to="/cadastrarcategoria">
+              <p className="font-montserrat text-base hover:text-[#ea337b]">
+                CADASTRAR CATEGORIA
+              </p>
+            </Link>
             <p className="font-montserrat text-base hover:text-[#ea337b]">
               PERFIL
-            </p>
-            <p className="font-montserrat text-base hover:text-[#ea337b]">
-              SAIR
             </p>
           </div>
         </div>

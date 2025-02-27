@@ -1,4 +1,4 @@
-import CardPostagens from "../cardpostagens/CadPostagens";
+import CardPostagens from "../cardpostagens/CardPostagens";
 
 function ListaPostagens() {
   return (
