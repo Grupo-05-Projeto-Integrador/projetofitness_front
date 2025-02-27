@@ -7,6 +7,7 @@ import ListaCategoria from "./components/categoria/listaCategoria/ListaCategoria
 import FormCategoria from "./components/categoria/formcategoria/FormCategoria";
 import DeletarCategoria from "./components/categoria/deletarcategoria/DeletarCategoria";
 import ListaPostagens from "./components/postagens/listapostagens/ListaPostagens";
+import FormPostagem from "./components/postagens/formpostagens/FormPostagens";
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
             <Route path="/categoria" element={<ListaCategoria />} />
             <Route path="/cadastrarcategoria" element={<FormCategoria />} />
             <Route path="/editarcategoria/:id" element={<FormCategoria />} />
+            <Route path="/cadastrarpostagem" element={<FormPostagem />} />
+            <Route path="/editarpostagem/:id" element={<FormPostagem />} />
             <Route
               path="/deletarcategoria/:id"
               element={<DeletarCategoria />}

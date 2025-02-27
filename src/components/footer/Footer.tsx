@@ -8,7 +8,7 @@ function Footer() {
   let data = new Date().getFullYear();
 
   return (
-    <div className="w-full h-[355px] bg-[#1B1F3E] text-white flex justify-center items-center">
+    <div className="w-full h-[355px] bg-[#090D28] text-white flex justify-center items-center">
       <div className="max-w-[1440px] w-full flex justify-between items-center px-10">
         <div className="w-1/1 flex flex-col justify-center items-center text-center">
           <img src="src/assets/LOGO3.png" alt="Gym Logo" className="h-40" />
@@ -18,7 +18,6 @@ function Footer() {
           </p>
         </div>
 
-        {/* Links de navegação */}
         <div className="w-1/2 flex justify-around text-sm">
           <div className="flex flex-col items-center">
             <h3 className="font-bold text-xl mb-2">Compania</h3>
@@ -37,7 +36,6 @@ function Footer() {
           </div>
         </div>
 
-        {/* Ícones de redes sociais */}
         <div className="w-1/1 flex flex-col items-center">
           <h3 className="font-bold text-xl mb-2">Social Media Link</h3>
           <div className="flex gap-4 mt-2">

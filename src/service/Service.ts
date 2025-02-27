@@ -4,10 +4,13 @@ const api = axios.create({
   baseURL: "https://projetointegradorfitness.onrender.com/",
 });
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
 export const buscar = async (url: string, setDados: Function) => {
-  const resposta = await api.get(url);
-  setDados(resposta.data);
+  try {
+    const resposta = await api.get(url);
+    setDados(resposta.data);
+  } catch (error) {
+    console.error("Erro ao buscar dados:", error);
+  }
 };
 
 export const cadastrar = async (

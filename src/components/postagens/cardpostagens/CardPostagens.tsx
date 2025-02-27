@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
+import Postagem from "../../../models/Postagens";
 
-function CardPostagens() {
+interface Props {
+  postagem: Postagem;
+}
+
+function CardPostagens({ postagem }: Props) {
   return (
     <div className="border border-gray-300 rounded-lg overflow-hidden shadow-md bg-navy max-w-md mx-auto">
       <div className="flex items-center p-3 border-b">
@@ -9,21 +14,25 @@ function CardPostagens() {
           className="h-10 w-10 rounded-full border border-gray-300"
           alt="User Avatar"
         />
-        <h3 className="ml-3 font-semibold text-gray-800">Nome do Usuário</h3>
+        <h3 className="ml-3 font-semibold text-gray-800">
+          {postagem.usuario?.nome}
+        </h3>
       </div>
 
       <img
-        src="https://via.placeholder.com/500"
+        src={postagem.imagem}
         alt="Imagem do Post"
-        className="w-full object-cover"
+        className="w-3xl object-cover"
       />
 
-      <div className="p-4">
-        <h4 className="font-bold text-lg">Título</h4>
-        <p className="text-gray-700 text-sm mt-1">Texto da postagem...</p>
-        <p className="text-gray-500 text-xs mt-2">📌 Tema: Exemplo</p>
+      <div className="p-1">
+        <h4 className="font-bold text-lg">{postagem.titulo}</h4>
+        <p className="text-gray-700 text-sm mt-1">{postagem.texto}</p>
+        <p className="text-gray-500 text-xs mt-2">
+          📌 Tema: {postagem.categoria?.descricao || "Sem tema"}
+        </p>
         <p className="text-gray-500 text-xs">
-          📅 Data: 26 de fevereiro de 2025
+          📅 Data: {new Date(postagem.data).toLocaleDateString()}
         </p>
       </div>
 
