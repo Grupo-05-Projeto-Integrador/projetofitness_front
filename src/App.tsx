@@ -8,6 +8,7 @@ import FormCategoria from "./components/categoria/formcategoria/FormCategoria";
 import DeletarCategoria from "./components/categoria/deletarcategoria/DeletarCategoria";
 import ListaPostagens from "./components/postagens/listapostagens/ListaPostagens";
 import FormPostagem from "./components/postagens/formpostagens/FormPostagens";
+import Sobre from "./pages/sobre/Sobre";
 
 function App() {
   return (
@@ -23,11 +24,12 @@ function App() {
             <Route path="/editarcategoria/:id" element={<FormCategoria />} />
             <Route path="/cadastrarpostagem" element={<FormPostagem />} />
             <Route path="/editarpostagem/:id" element={<FormPostagem />} />
+            <Route path="/postagens" element={<ListaPostagens />} />
+            <Route path="/sobre" element={<Sobre />} />
             <Route
               path="/deletarcategoria/:id"
               element={<DeletarCategoria />}
             />
-            <Route path="/postagens" element={<ListaPostagens />} />
           </Routes>
         </div>
         <Footer />

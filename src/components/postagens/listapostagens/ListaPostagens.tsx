@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { buscar } from "../../../service/Service";
 import CardPostagens from "../cardpostagens/CardPostagens";
 import { DNA } from "react-loader-spinner";
-import Postagem from "../../../models/Postagens";
+import Postagens from "../../../models/Postagens";
 
 function ListaPostagens() {
-  const [postagens, setPostagens] = useState<Postagem[]>([]);
+  const [postagens, setPostagens] = useState<Postagens[]>([]);
 
   async function buscarPostagens() {
     try {
@@ -37,8 +37,8 @@ function ListaPostagens() {
             className="container mx-auto my-4 
                         grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
           >
-            {postagens.map((postagem) => (
-              <CardPostagens key={postagem.id} postagem={postagem} />
+            {postagens.map((postagens) => (
+              <CardPostagens key={postagens.id} postagens={postagens} />
             ))}
           </div>
         </div>

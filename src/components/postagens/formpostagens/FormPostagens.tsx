@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { buscar } from "../../../service/Service"; // Ajuste o caminho conforme necessário
+import { buscar } from "../../../service/Service";
 
 interface Categoria {
   id: number;
@@ -8,10 +8,10 @@ interface Categoria {
 
 function FormPostagem() {
   const [categorias, setCategorias] = useState<Categoria[]>([]);
-  const [postagem, setPostagem] = useState({
+  const [postagens, setPostagem] = useState({
     titulo: "",
     texto: "",
-    foto: "", // Campo para o link da imagem
+    foto: "",
     categoria: "",
   });
 
@@ -30,16 +30,15 @@ function FormPostagem() {
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) {
     setPostagem({
-      ...postagem,
+      ...postagens,
       [event.target.name]: event.target.value,
     });
   }
 
   function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
-    console.log("Dados enviados:", postagem);
+    console.log("Dados enviados:", postagens);
 
-    // Simula envio (substituir pelo código real de requisição)
     setTimeout(() => {
       alert("Postagem cadastrada com sucesso!");
     }, 1000);
@@ -57,7 +56,7 @@ function FormPostagem() {
             placeholder="Título"
             name="titulo"
             required
-            value={postagem.titulo}
+            value={postagens.titulo}
             onChange={handleChange}
             className="border-2 border-slate-700 rounded p-2"
           />
@@ -69,7 +68,7 @@ function FormPostagem() {
             placeholder="Texto"
             name="texto"
             required
-            value={postagem.texto}
+            value={postagens.texto}
             onChange={handleChange}
             className="border-2 border-slate-700 rounded p-2"
           />
@@ -80,16 +79,16 @@ function FormPostagem() {
             type="text"
             placeholder="Cole o link da imagem"
             name="foto"
-            value={postagem.foto}
+            value={postagens.foto}
             onChange={handleChange}
             className="border-2 border-slate-700 rounded p-2"
           />
         </div>
 
-        {/* Pré-visualização da imagem */}
-        {postagem.foto && (
+        {/* Pré-visualização da imagem que foi adicionada pelo link */}
+        {postagens.foto && (
           <img
-            src={postagem.foto}
+            src={postagens.foto}
             alt="Pré-visualização"
             className="w-full max-w-xs h-40 object-cover mx-auto border rounded-md"
           />
@@ -100,7 +99,7 @@ function FormPostagem() {
           <select
             name="categoria"
             id="categoria"
-            value={postagem.categoria}
+            value={postagens.categoria}
             onChange={handleChange}
             className="border p-2 border-slate-800 rounded"
           >

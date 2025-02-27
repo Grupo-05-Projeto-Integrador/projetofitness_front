@@ -15,9 +15,11 @@ function Navbar() {
             <Link to="/home">
               <p className="font-sans text-base hover:text-[#ea337b]">HOME</p>
             </Link>
-            <p className="font-montserrat text-base hover:text-[#ea337b]">
-              SOBRE
-            </p>
+            <Link to="/Sobre">
+              <p className="font-montserrat text-base hover:text-[#ea337b]">
+                SOBRE
+              </p>
+            </Link>
             <Link to="/postagens">
               <p className="font-montserrat text-base hover:text-[#ea337b]">
                 POSTAGENS

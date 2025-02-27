@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import Postagem from "../../../models/Postagens";
+import Postagens from "../../../models/Postagens";
 
 interface Props {
-  postagem: Postagem;
+  postagens: Postagens;
 }
 
-function CardPostagens({ postagem }: Props) {
+function CardPostagens({ postagens }: Props) {
   return (
     <div className="border border-gray-300 rounded-lg overflow-hidden shadow-md bg-navy max-w-md mx-auto">
       <div className="flex items-center p-3 border-b">
@@ -15,24 +15,21 @@ function CardPostagens({ postagem }: Props) {
           alt="User Avatar"
         />
         <h3 className="ml-3 font-semibold text-gray-800">
-          {postagem.usuario?.nome}
+          {postagens.usuario?.nome}
         </h3>
       </div>
 
       <img
-        src={postagem.imagem}
+        src={postagens.imagem}
         alt="Imagem do Post"
         className="w-3xl object-cover"
       />
 
       <div className="p-1">
-        <h4 className="font-bold text-lg">{postagem.titulo}</h4>
-        <p className="text-gray-700 text-sm mt-1">{postagem.texto}</p>
+        <h4 className="font-bold text-lg">{postagens.titulo}</h4>
+        <p className="text-gray-700 text-sm mt-1">{postagens.texto}</p>
         <p className="text-gray-500 text-xs mt-2">
-          📌 Tema: {postagem.categoria?.descricao || "Sem tema"}
-        </p>
-        <p className="text-gray-500 text-xs">
-          📅 Data: {new Date(postagem.data).toLocaleDateString()}
+          📌 Categoria: {postagens.categoria?.descricao || "Sem categoria"}
         </p>
       </div>
 

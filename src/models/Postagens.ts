@@ -1,11 +1,13 @@
 import Categoria from "./Categoria";
 import Usuario from "./Usuario";
 
-export default interface Postagem {
-  id?: number; // Torna opcional ao cadastrar nova postagem
+export default interface Postagens {
+  data: string | number | Date;
+  imagem: string | undefined;
+  id?: number;
   titulo: string;
   texto: string;
   foto: string;
-  categoria: Categoria | null; // Permite null para evitar erro
-  usuario: Usuario | null; // Permite null para evitar erro
+  categoria: Categoria | null;
+  usuario: Usuario | null;
 }
