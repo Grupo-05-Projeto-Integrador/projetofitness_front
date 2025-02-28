@@ -1,23 +1,23 @@
-import { useEffect, useState } from "react";
-import { buscar } from "../../../service/Service";
 import CardPostagens from "../cardpostagens/CardPostagens";
+import { useState, useEffect } from "react";
+import Postagem from "../../../models/Postagens";
+import { buscar } from "../../../service/Service";
 import { DNA } from "react-loader-spinner";
-import Postagens from "../../../models/Postagens";
 
 function ListaPostagens() {
-  const [postagens, setPostagens] = useState<Postagens[]>([]);
+  const [postagens, setPostagens] = useState<Postagem[]>([]);
 
   async function buscarPostagens() {
     try {
-      await buscar("/postagens", setPostagens);
-    } catch (error) {
+      await buscar("/postagens", setPostagens, {}); // Passando um objeto vazio para o header
+    } catch (error: any) {
       console.error("Erro ao buscar postagens", error);
     }
   }
 
   useEffect(() => {
     buscarPostagens();
-  }, []);
+  }, [postagens.length]);
 
   return (
     <>
@@ -37,8 +37,8 @@ function ListaPostagens() {
             className="container mx-auto my-4 
                         grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
           >
-            {postagens.map((postagens) => (
-              <CardPostagens key={postagens.id} postagens={postagens} />
+            {postagens.map((postagem) => (
+              <CardPostagens key={postagem.id} postagem={postagem} />
             ))}
           </div>
         </div>

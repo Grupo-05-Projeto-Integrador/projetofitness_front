@@ -35,9 +35,11 @@ function Navbar() {
                 CADASTRAR CATEGORIA
               </p>
             </Link>
-            <p className="font-montserrat text-base hover:text-[#ea337b]">
-              PERFIL
-            </p>
+            <Link to="/usuarios/all">
+              <p className="font-montserrat text-base hover:text-[#ea337b]">
+                PERFIL
+              </p>
+            </Link>
           </div>
         </div>
       </div>

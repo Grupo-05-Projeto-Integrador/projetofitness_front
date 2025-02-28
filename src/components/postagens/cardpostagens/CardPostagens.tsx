@@ -20,7 +20,7 @@ function CardPostagens({ postagens }: Props) {
       </div>
 
       <img
-        src={postagens.imagem}
+        src={postagens.foto}
         alt="Imagem do Post"
         className="w-3xl object-cover"
       />
